@@ -52,7 +52,7 @@ Do note that files used with the write() function exist in the sysfs */sys/class
 ####ADC - adc.js
 A simple wrapper for the beaglebone ADC sysfs object. Setup for the ADC, such as device tree overlays. Must be done prior to using this functionality. Currently there is no facility in this code to load device tree files, but perhaps in the future this will change.
 
-`read(ch, callback)` Read from the specified channel `ch`. As this function is asyncronous, a `callback` function must be provided in order to work with the data returned.
+**`read(ch, callback)`** Read from the specified channel `ch`. As this function is asyncronous, a `callback` function must be provided in order to work with the data returned.
 
 ####Serial - serial-read-example.js serial-write-example.js
 These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods createReadStream(), and createWriteStream()
@@ -62,5 +62,7 @@ This file is simply a demonstration of combining ADC reads, and serial writes in
 
 ####Future code
 As of this moment in time, the only other feature that I personally plan on adding into this code is PWM. However for that to happen I need a hardware jig in order to test the code properly. Ideally, I would have prefered a test jig for the ADC as well, but at first glance reading floating ADC values seems to work as a "decent" indication as to whether it works or not.
+
+I have given some thought to adding wrapper code for various other cmd line tools. Perhaps it would be neet to add tools such as 'uptime', 'free', or anything else of this nature. The really very cool thing here, is that it has been demonstrated already in this project. For the I2C funcitonality. So repeating the process should be very trivial. Even for the inexperienced developer.
 
 Passed the above mentioned intentions. I'm not sure adding SPI would make sense for Nodejs. Nodejs does reaquire a lot of CPU in order to achieve similar results in other languages such as C, or C++. The AM335x's PRU's also make little sense considering they are meant as a high speed peripheral. Perhaps I will rethink in the future. 
