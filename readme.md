@@ -55,12 +55,12 @@ A simple wrapper for the beaglebone ADC sysfs object. Setup for the ADC, such as
 `read(ch, callback)` Read from the specified channel `ch`. As this function is asyncronous, a `callback` function must be provided in order to work with the data returned.
 
 ####Serial - serial-read-example.js serial-write-example.js
-These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods creatReadStream(), and createWriteStream()
+These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods createReadStream(), and createWriteStream()
 
 ####Serial, and ADC - test.js
 This file is simply a demonstration of combining ADC reads, and serial writes into the same code file.
 
 ####Future code
-As of this moment in time, the only other feature that I personally plan on adding into this code is PWM. However for that to happen I need a hardware jig in order to test the code properly. Ideally, I have prefered a test jig for the ADC as well, but at first glance reading floating ADC values seems to work as a "decent" indication as to whether it works or not.
+As of this moment in time, the only other feature that I personally plan on adding into this code is PWM. However for that to happen I need a hardware jig in order to test the code properly. Ideally, I would have prefered a test jig for the ADC as well, but at first glance reading floating ADC values seems to work as a "decent" indication as to whether it works or not.
 
 Passed the above mentioned intentions. I'm not sure adding SPI would make sense for Nodejs. Nodejs does reaquire a lot of CPU in order to achieve similar results in other languages such as C, or C++. The AM335x's PRU's also make little sense considering they are meant as a high speed peripheral. Perhaps I will rethink in the future. 
