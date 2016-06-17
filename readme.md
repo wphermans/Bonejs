@@ -11,6 +11,14 @@ For many reasons, but primarily to keep things simple, and minimal.
 ##Compatibility
 Currently, tested for the *BeagleBoard.org Debian Image 2016-05-01* console image. Kernel used was *4.4.8-ti-r22*. However this code *should* work for any beaglebord.org debian images, running a 4.x kernel. By chance if older, or future kernels have different pathing for the various sysfs directories, and files. The code base for this project is very small, and as such would be easily fixed. One of the benefits of keeping things simple, and minimal.
 
+Versons of node, and npm are listed below. However, the intention of this project is really meant to do without NPM as much as possible. At least for these source files. They can simply be a dropped into a project directory, and required to work. As far as Nodejs versioning requirements. There are none that I am aware of. Although there is usge of the Nodejs FileSystem object (fs), and perhaps some functions used require specific versions of node ? Feel free to check, and / or let me know.
+
+$ node -v
+v4.2.6
+$ npm -v
+3.9.0
+
+
 ####GPIO - gpio.js 
 Do note that directories, and files used with these functions exist in the sysfs */sys/class/gpio* path. As such, any system wide permissions for these directories, and files apply. Futhermore, a `pin` must first be exported using the `export_pin` function, otherwise an error will be thrown. Additionally, many pins must also first be muxed as GPIO(0x7) pins prior to using gpio.js's functionality. This limitation is imposed by the hardware, since many pins are multi peripheral capable.
 
