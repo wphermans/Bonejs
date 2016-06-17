@@ -14,13 +14,13 @@ Currently, tested for the *BeagleBoard.org Debian Image 2016-05-01* console imag
 ####GPIO - gpio.js 
 Do note that directories, and files used with these functions exist in the sysfs */sys/class/gpio* path. As such, any system wide permissions for these directories, and files apply. Futhermore, a `pin` must first be exported using the `export_pin` function, otherwise an error will be thrown. Additionally, many pins must also first be muxed as GPIO(0x7) pins prior to using gpio.js's functionality. This limitation is imposed by the hardware, since many pins are multi peripheral capable.
 
-`read(pin, file)` is used to read from a specific `file` in relation to *the* specified GPIO `pin`. Readable files include, but are not limited to: 'active_low', 'direction', 'edge', 'uevent', and 'value'.  
+**`read(pin, file)`** is used to read from a specific `file` in relation to *the* specified GPIO `pin`. Readable files include, but are not limited to: 'active_low', 'direction', 'edge', 'uevent', and 'value'.  
 
-`write(pin, file, value)` is used to write `value` to a specific `file` in relation to *the* specified GPIO `pin`. Common files to write to would include 'direction', 'edge', and 'value'. 
+**`write(pin, file, value)`** is used to write `value` to a specific `file` in relation to *the* specified GPIO `pin`. Common files to write to would include 'direction', 'edge', and 'value'. 
 
-`export_pin(pin)` Exports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/export*.
+**`export_pin(pin)`** Exports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/export*.
 
-`unexport_pin(pin)` Unexports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/unexport*
+**`unexport_pin(pin)`** Unexports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/unexport*
 
 ####I2C - i2c.js
 A very thin wrapper around the i2c-tools executable *i2cget*. As such, the Debian
@@ -31,7 +31,7 @@ it is used with the given system. Before using this functionality.
 
 Permissions for */usr/sbin/i2cget*, and */dev/i2c-[0-2]* may also need to be modified if one wishes to use this functionality as a regular user. 
 
-`read(dev, addr, subaddr, callback)` Reads from *the* specified `dev` bus where `addr` is the chip address, and `subaddr` is the data address. This function is asynchronous in nature, so a `callback` function must be provided to recieve data as it becomes ready.
+**`read(dev, addr, subaddr, callback)`** Reads from *the* specified `dev` bus where `addr` is the chip address, and `subaddr` is the data address. This function is asynchronous in nature, so a `callback` function must be provided to recieve data as it becomes ready.
 
 ####pmic-example.js
 An example usage of the i2c.js functionality. Reading from the tps65217 pmic 
@@ -47,9 +47,20 @@ also a requirement.
 ####USR LEDs - user-leds.js
 Do note that files used with the write() function exist in the sysfs */sys/class/leds* path. As such, any system wide permissions for these files apply.
 
-`write(led, file, value)` Writes a `value` to the specified `file` coresponding to the given `led`. Valid values for `led` are [0-3], and common `file`s written to are 'brightness', and 'trigger'.
+**`write(led, file, value)`** Writes a `value` to the specified `file` coresponding to the given `led`. Valid values for `led` are [0-3], and common `file`s written to are 'brightness', and 'trigger'.
 
 ####ADC - adc.js
-A simple wrapper for the beaglebone ADC sysfs object. Setup for the ADC, such as device tree overlays. Must be done prior to using this functionality. 
-Currently there is no facility in this code to load device tree files, but perhaps in the future this will change.
+A simple wrapper for the beaglebone ADC sysfs object. Setup for the ADC, such as device tree overlays. Must be done prior to using this functionality. Currently there is no facility in this code to load device tree files, but perhaps in the future this will change.
 
+`read(ch, callback)` Read from the specified channel `ch`. As this function is asyncronous, a `callback` function must be provided in order to work with the data returned.
+
+####Serial - serial-read-example.js serial-write-example.js
+These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods creatReadStream(), and createWriteStream()
+
+####Serial, and ADC - test.js
+This file is simply a demonstration of combining ADC reads, and serial writes into the same code file.
+
+####Future code
+As of this moment in time, the only other feature that I personally plan on adding into this code is PWM. However for that to happen I need a hardware jig in order to test the code properly. Ideally, I have prefered a test jig for the ADC as well, but at first glance reading floating ADC values seems to work as a "decent" indication as to whether it works or not.
+
+Passed the above mentioned intentions. I'm not sure adding SPI would make sense for Nodejs. Nodejs does reaquire a lot of CPU in order to achieve similar results in other languages such as C, or C++. The AM335x's PRU's also make little sense considering they are meant as a high speed peripheral. Perhaps I will rethink in the future. 
