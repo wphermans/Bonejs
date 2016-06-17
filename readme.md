@@ -11,7 +11,7 @@ For many reasons, but primarily to keep things simple, and minimal.
 ##Compatibility
 Currently, tested for the *BeagleBoard.org Debian Image 2016-05-01* console image. Kernel used was *4.4.8-ti-r22*. However this code *should* work for any beaglebord.org debian images, running a 4.x kernel. By chance if older, or future kernels have different pathing for the various sysfs directories, and files. The code base for this project is very small, and as such would be easily fixed. One of the benefits of keeping things simple, and minimal.
 
-####gpio.js 
+####GPIO - gpio.js 
 Do note that directories, and files used with these functions exist in the sysfs */sys/class/gpio* path. As such, any system wide permissions for these directories, and files apply. Futhermore, a `pin` must first be exported using the `export_pin` function, otherwise an error will be thrown. Additionally, many pins must also first be muxed as GPIO(0x7) pins prior to using gpio.js's functionality. This limitation is imposed by the hardware, since many pins are multi peripheral capable.
 
 `read(pin, file)` is used to read from a specific `file` in relation to *the* specified GPIO `pin`. Readable files include, but are not limited to: 'active_low', 'direction', 'edge', 'uevent', and 'value'.  
@@ -22,7 +22,7 @@ Do note that directories, and files used with these functions exist in the sysfs
 
 `unexport_pin(pin)` Unexports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/unexport*
 
-####i2c.js
+####I2C - i2c.js
 A very thin wrapper around the i2c-tools executable *i2cget*. As such, the Debian
 package i2c-tools must be installed to use this functionality. Error checking for
 read() is nearly non existant, only checking if the /dev/ path exists for the
@@ -45,11 +45,11 @@ Since this file does require i2c.js. Having the i2c-tools package installed is
 also a requirement.
 
 ####USR LEDs - user-leds.js
-Do note that files used with the write() function exist in the sysfs */sys/class/leds* path. 
-As such, any system wide permissions for these files apply.
+Do note that files used with the write() function exist in the sysfs */sys/class/leds* path. As such, any system wide permissions for these files apply.
 
-`write(led, file, value)` Writes a `value` to the specified `file` coresponding to the given `led`. 
-Valid values for `led` are [0-3], and common `file`s written to are 'brightness', and 'trigger'.
+`write(led, file, value)` Writes a `value` to the specified `file` coresponding to the given `led`. Valid values for `led` are [0-3], and common `file`s written to are 'brightness', and 'trigger'.
 
-####ADC
-`$ sudo sh -c "echo 'BB-ADC' > /sys/devices/platform/bone_capemgr/slots"`
+####ADC - adc.js
+A simple wrapper for the beaglebone ADC sysfs object. Setup for the ADC, such as device tree overlays. Must be done prior to using this functionality. 
+Currently there is no facility in this code to load device tree files, but perhaps in the future this will change.
+
