@@ -13,10 +13,9 @@ Currently, tested for the *BeagleBoard.org Debian Image 2016-05-01* console imag
 
 Versons of node, and npm are listed below. However, the intention of this project is really meant to do without NPM as much as possible. At least for these source files. They can simply be a dropped into a project directory, and required to work. As far as Nodejs versioning requirements. There are none that I am aware of. Although there is usge of the Nodejs FileSystem object (fs), and perhaps some functions used require specific versions of node ? Feel free to check, and / or let me know.
 
-$ node -v
-v4.2.6
-$ npm -v
-3.9.0
+node -v: v4.2.6
+
+npm -v: 3.9.0
 
 
 ####GPIO - gpio.js 
