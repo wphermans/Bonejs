@@ -29,6 +29,7 @@
         
         timerID = setInterval(toggleLED, 100);
         
+        // Trap CTRL + C key combination, and exit app cleanly.
         stdin.on( 'data', function( key ){
                 // ctrl-c ( end of text )
                 if ( key === '\u0003' ) {
