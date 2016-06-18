@@ -16,7 +16,7 @@
         var led_number = 0;
         var led_value = 0;
         
-        function toggleLED(value){
+        function toggleLED(){
                 
                 if(led_number <= 3){
                         led.write(led_number, 'brightness', led_value);
