@@ -9,7 +9,7 @@
         
         // Turn off all USR LEDs
         for(var n=0; n < 4; n++){
-            led.write(n, 'trigger', 'none');
+                led.write(n, 'trigger', 'none');
         }
         
         // Create a blink pattern
