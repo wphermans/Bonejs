@@ -59,6 +59,9 @@ These two example files are to demonstrate how simple it is to implement serial 
 ####Serial, and ADC - test.js
 This file is simply a demonstration of combining ADC reads, and serial writes into the same code file.
 
+####Permissions
+[permissions.md](https://github.com/wphermans/Bonejs/blob/master/permissions.md)
+
 ####Future code
 As of this moment in time, the only other feature that I personally plan on adding into this code is PWM. However for that to happen I need a hardware jig in order to test the code properly. Ideally, I would have preferred a test jig for the ADC as well, but at first glance reading floating ADC values seems to work as a "decent" indication as to whether it works or not.
 
