@@ -9,7 +9,7 @@ For example:
 william@beaglebone:~$ sudo groupadd gpio
 william@beaglebone:~$ sudo usermod -aG gpio william
 william@beaglebone:~$ sudo chown root:gpio /usr/sbin/i2cget
-william@beaglebone:~$ chmod 770 /usr/sbin/i2cget
+william@beaglebone:~$ sudo chmod 770 /usr/sbin/i2cget
 ```
 Additionally, the cmd line tool config-pin has been written using sudo for various commands
 within the tool. The will present a problem if you wish to use groups as demonstrated above.
