@@ -1,8 +1,9 @@
 ####GPIO
 #####Implementation file - gpio.js
 
-	read(pin, file)
-is used to read from a specific `file` in relation to *the* specified GPIO `pin`. Readable files include, but are not limited to: 'active_low', 'direction', 'edge', 'uevent', and 'value'. 
+>`read(pin, file)`
+
+>Read from a specific `file` in relation to *the* specified GPIO `pin`. Readable files include, but are not limited to: 'active_low', 'direction', 'edge', 'uevent', and 'value'. 
 
 	write(pin, file, value) 
 is used to write `value` to a specific `file` in relation to *the* specified GPIO `pin`. Common files to write to would include 'direction', 'edge', and 'value'.
