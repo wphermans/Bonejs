@@ -12,7 +12,7 @@ william@beaglebone:~$ sudo chown root:gpio /usr/sbin/i2cget
 william@beaglebone:~$ sudo chmod 770 /usr/sbin/i2cget
 ```
 Additionally, the cmd line tool config-pin has been written using sudo for various commands
-within the tool. The will present a problem if you wish to use groups as demonstrated above.
+within the tool. This will present a problem if you wish to use groups as demonstrated above.
 However, this can be corrected by removing any occurrences of `'sudo -A'`, (without the quotes),
 within the script file. Just replace with an empty string '' .
 
