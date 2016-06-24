@@ -18,16 +18,8 @@ node -v: v4.2.6
 npm -v: 3.9.0
 
 
-####GPIO - gpio.js
-Do note that directories, and files used with these functions exist in the sysfs */sys/class/gpio* path. As such, any system wide permissions for these directories, and files apply. Furthermore, a `pin` must first be exported using the `export_pin` function, otherwise an error will be thrown. Additionally, many pins must also first be muxed as GPIO(0x7) pins prior to using gpio.js's functionality. This limitation is imposed by the hardware, since many pins are multi peripheral capable.
-
-**`read(pin, file)`** is used to read from a specific `file` in relation to *the* specified GPIO `pin`. Readable files include, but are not limited to: 'active_low', 'direction', 'edge', 'uevent', and 'value'. 
-
-**`write(pin, file, value)`** is used to write `value` to a specific `file` in relation to *the* specified GPIO `pin`. Common files to write to would include 'direction', 'edge', and 'value'.
-
-**`export_pin(pin)`** Exports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/export*.
-
-**`unexport_pin(pin)`** Unexports a `pin` exactly as if echoing a numerical value to */sys/class/gpio/unexport*
+####GPIO
+[gpio-readme.md](https://github.com/wphermans/Bonejs/blob/master/gpio-readme.md)
 
 ####I2C - i2c.js
 A very thin wrapper around the i2c-tools executable *i2cget*. As such, the Debian
