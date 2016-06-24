@@ -18,4 +18,5 @@ exports.listModes = function(pin, callback){
 
         callback(stdout);       
     });
-};   
+};
+ 

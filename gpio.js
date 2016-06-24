@@ -2,12 +2,16 @@
 var fs = require('fs');
 var path = "/sys/class/gpio/gpio";
 
-exports.read = function(pin, file){	
+exports.read = function(pin, file, callback){	
 	fs.access(path + pin + "/" + file, fs.F_OK, (err) => {
 		if(err){throw err;}
 	});
 
-	return fs.readFileSync(path + pin + "/" + file, 'utf8');
+	fs.readFile(path + pin + "/" + file, 'utf8', (err, data) => {
+		if(err){throw err;}
+
+		callback(data);
+	});
 };
 
 exports.write = function(pin, file, value){
