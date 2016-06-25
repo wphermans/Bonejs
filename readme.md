@@ -20,6 +20,8 @@ npm -v: 3.9.0
 ##Documentation
 
 <dl>
+	<dt></dt>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/adc-readme.md">adc-readme.md</a></dd>
 	<dt>GPIO</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/gpio-readme.md">gpio-readme.md</a></dd>
 	<dt>Permissions</dt>
@@ -53,11 +55,6 @@ also a requirement.
 Do note that files used with the write() function exist in the sysfs */sys/class/leds* path. As such, any system wide permissions for these files apply.
 
 **`write(led, file, value)`** Writes a `value` to the specified `file` corresponding to the given `led`. Valid values for `led` are [0-3], and common `file`s written to are 'brightness', and 'trigger'.
-
-####ADC - adc.js
-A simple wrapper for the beaglebone ADC sysfs object. Setup for the ADC, such as device tree overlays. Must be done prior to using this functionality. Currently there is no facility in this code to load device tree files, but perhaps in the future this will change.
-
-**`read(ch, callback)`** Read from the specified channel `ch`. As this function is asynchronous, a `callback` function must be provided in order to work with the data returned.
 
 ####Serial - serial-read-example.js serial-write-example.js
 These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods createReadStream(), and createWriteStream()
