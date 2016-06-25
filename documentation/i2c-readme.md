@@ -7,7 +7,7 @@ A simple wrapper for the cmd line utility `i2cget`.
 
 <dl>
 	<dt>read(dev, addr, subaddr, callback)</dt>
-	<dd>RReads from *the* specified `dev` bus where `addr` is the chip address, and `subaddr` is the data address. This function is asynchronous in nature, so a `callback` function must be provided to receive data as it becomes ready.</dd>
+	<dd>Reads from the specified <em>dev</em> bus where <em>addr</em> is the chip address, and <em>subaddr</em> is the data address. This function is asynchronous in nature, so a <em>callback</em> function must be provided to receive data as it becomes ready.</dd>
 </dl>
 
 
