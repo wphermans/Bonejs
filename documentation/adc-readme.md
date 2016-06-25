@@ -18,7 +18,7 @@ The `ti_am335x_adc` driver module must be loaded in order for this functionality
 
 **Load ADC device tree overlay:**
 
->debian@beaglebone:~$ sudo sh -c "echo 'BB-ADC' > /sys/devices/platform/bone_capemgr/slots"
+>`debian@beaglebone:~$ sudo sh -c "echo 'BB-ADC' > /sys/devices/platform/bone_capemgr/slots"`
 
 **Example:**
 https://github.com/wphermans/Bonejs/blob/master/examples/adc-example.js
