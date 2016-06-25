@@ -28,12 +28,9 @@ npm -v: 3.9.0
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/i2c-readme.md">i2c-readme.md</a></dd>
 	<dt>Permissions</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/permissions.md">permissions.md</a></dd>
+	<dt>USR LED</dt>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/user-led-readme.md">user-led-readme.md</a></dd>
 </dl>
-
-####USR LEDs - user-leds.js
-Do note that files used with the write() function exist in the sysfs */sys/class/leds* path. As such, any system wide permissions for these files apply.
-
-**`write(led, file, value)`** Writes a `value` to the specified `file` corresponding to the given `led`. Valid values for `led` are [0-3], and common `file`s written to are 'brightness', and 'trigger'.
 
 ####Serial - serial-read-example.js serial-write-example.js
 These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods createReadStream(), and createWriteStream()
