@@ -29,7 +29,7 @@ npm -v: 3.9.0
 	<dt>Permissions</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/permissions.md">permissions.md</a></dd>
 	<dt>USR LED</dt>
-	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/user-led-readme.md">user-led-readme.md</a></dd>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/usr-led-readme.md">usr-led-readme.md</a></dd>
 </dl>
 
 ####Serial - serial-read-example.js serial-write-example.js
