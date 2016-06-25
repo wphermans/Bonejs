@@ -1,5 +1,6 @@
 ##GPIO
-###Implementation file: gpio.js
+A simple wrapper for the beaglebone GPIO sysfs subsystem.
+#####Implementation file: gpio.js
 
 <dl>
   <dt>read(pin, file)</dt>
