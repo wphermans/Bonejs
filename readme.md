@@ -21,9 +21,9 @@ npm -v: 3.9.0
 
 <dl>
 	<dt>GPIO</dt>
-	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/gpio-readme.md">gpio-readme.md</a></dd>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/gpio-readme.md">gpio-readme.md</a></dd>
 	<dt>Permissions</dt>
-	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/permissions.md">permissions.md</a></dd>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/permissions.md">permissions.md</a></dd>
 </dl>
 
 
