@@ -22,6 +22,8 @@ npm -v: 3.9.0
 <dl>
 	<dt>ADC</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/adc-readme.md">adc-readme.md</a></dd>
+	<dt>config-pin</dt>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/config-pin-readme.md">config-pin-readme.md</a></dd>
 	<dt>GPIO</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/gpio-readme.md">gpio-readme.md</a></dd>
 	<dt>I2C</dt>
