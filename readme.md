@@ -28,15 +28,11 @@ npm -v: 3.9.0
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/i2c-readme.md">i2c-readme.md</a></dd>
 	<dt>Permissions</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/permissions.md">permissions.md</a></dd>
+	<dt>Serial</dt>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/serial-readme.md">serial-readme.md</a></dd>
 	<dt>USR LED</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/usr-led-readme.md">usr-led-readme.md</a></dd>
 </dl>
-
-####Serial - serial-read-example.js serial-write-example.js
-These two example files are to demonstrate how simple it is to implement serial reads, and writes without any wrapper code what so ever. using the Nodejs fs object methods createReadStream(), and createWriteStream()
-
-####Serial, and ADC - test.js
-This file is simply a demonstration of combining ADC reads, and serial writes into the same code file.
 
 ####Future code
 As of this moment in time, the only other feature that I personally plan on adding into this code is PWM. However for that to happen I need a hardware jig in order to test the code properly. Ideally, I would have preferred a test jig for the ADC as well, but at first glance reading floating ADC values seems to work as a "decent" indication as to whether it works or not.
