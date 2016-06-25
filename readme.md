@@ -24,32 +24,11 @@ npm -v: 3.9.0
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/adc-readme.md">adc-readme.md</a></dd>
 	<dt>GPIO</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/gpio-readme.md">gpio-readme.md</a></dd>
+	<dt>I2C</dt>
+	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/i2c-readme.md">i2c-readme.md</a></dd>
 	<dt>Permissions</dt>
 	<dd><a href="https://github.com/wphermans/Bonejs/blob/master/documentation/permissions.md">permissions.md</a></dd>
 </dl>
-
-
-####I2C - i2c.js
-A very thin wrapper around the i2c-tools executable *i2cget*. As such, the Debian
-package i2c-tools must be installed to use this functionality. Error checking for
-read() is nearly non existent, only checking if the /dev/ path exists for the
-given dev parameter. So it would be wise to understand the tool i2cget, and how
-it is used with the given system. Before using this functionality.
-
-Permissions for */usr/sbin/i2cget*, and */dev/i2c-[0-2]* may also need to be modified if one wishes to use this functionality as a regular user.
-
-**`read(dev, addr, subaddr, callback)`** Reads from *the* specified `dev` bus where `addr` is the chip address, and `subaddr` is the data address. This function is asynchronous in nature, so a `callback` function must be provided to receive data as it becomes ready.
-
-####pmic-example.js
-An example usage of the i2c.js functionality. Reading from the tps65217 pmic
-device on the i2c-0 bus. This example reads every(except for INT ) register sub
-address, and parses the values out into an object. After which, this object is
-then written out to the file *pmic.json*. Values do need additional parsing in
-order to make better sense. The datasheet for the TI tps65217 PMIC provides the
-required information for these values. Starting on page 41.
-
-Since this file does require i2c.js. Having the i2c-tools package installed is
-also a requirement.
 
 ####USR LEDs - user-leds.js
 Do note that files used with the write() function exist in the sysfs */sys/class/leds* path. As such, any system wide permissions for these files apply.
