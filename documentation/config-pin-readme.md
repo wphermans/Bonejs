@@ -9,7 +9,7 @@ A simple wrapper for the universal-io cmd line utility `config-pin` See: [univer
 	<dt>config(pin, value)</dt>
 	<dd>Configure `pin` mode mux as `value`.</dd>
 	<dt>listModes(pin, callback)</dt>
-	<dd>List the valid mode values for the `pin`. As this function is asynchronous, a `callback` function much be provided.</dd>
+	<dd>List the valid mode values for the `pin`. As this function is asynchronous, a `callback` function must be provided.</dd>
 </dl>
 
 
