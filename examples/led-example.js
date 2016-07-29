@@ -1,7 +1,7 @@
 "use strict";
 
 (function() {
-        var led = require('./usr-leds.js');
+        var led = require('../usr-leds.js');
         var timerID = 0;
         var stdin = process.stdin;
         stdin.setRawMode( true );
