@@ -1,7 +1,7 @@
-##config-pin
+## config-pin
 A simple wrapper for the universal-io cmd line utility `config-pin` See: [universal-io](https://github.com/cdsteinkuehler/beaglebone-universal-io)
 
-######Implementation file: config-pin.js
+###### Implementation file: config-pin.js
 
 **Functions:**
 
