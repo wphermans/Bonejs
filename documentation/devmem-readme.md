@@ -1,7 +1,7 @@
-##devmem
+## devmem
 A simple wrapper for the devmem cmd line utility, which is compiled from the source file devmem2.c
 
-######Implementation file: devmem.js
+###### Implementation file: devmem.js
 
 **Functions:**
 
