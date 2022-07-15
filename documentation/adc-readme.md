@@ -1,7 +1,7 @@
-##ADC
+## ADC
 A simple wrapper for the beaglebone ADC sysfs object. 
 
-######Implementation file: adc.js
+###### Implementation file: adc.js
 
 **Functions:**
 
