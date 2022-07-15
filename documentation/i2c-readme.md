@@ -1,7 +1,7 @@
-##I2C
+## I2C
 A simple wrapper for the cmd line utility `i2cget`. 
 
-######Implementation file: i2c.js
+###### Implementation file: i2c.js
 
 **Functions:**
 
