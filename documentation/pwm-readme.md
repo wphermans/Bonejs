@@ -1,7 +1,7 @@
-##devmem
+## PWM
 A simple wrapper for the pwm sysfs file system.
 
-######Implementation file: pwm.js
+###### Implementation file: pwm.js
 
 **Functions:**
 
