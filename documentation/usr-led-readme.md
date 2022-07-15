@@ -1,7 +1,7 @@
-##USR LED
+## USR LED
 A simple wrapper for the beaglebones USR LED sysfs subsystem. 
 
-######Implementation file: usr-led.js
+###### Implementation file: usr-led.js
 
 **Functions:**
 
